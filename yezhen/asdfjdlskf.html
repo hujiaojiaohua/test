@@ -1,0 +1,387 @@
+
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>acgvr</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="stylesheets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="stylesheets/css/style.css">
+</head>
+
+<body>
+<div class="wrap">
+    <div class="page-header">
+        <div class="leftside-header">
+            <div class="logo">
+                <a href="index.html" class="on-click">
+                    <img alt="logo" src="images/header-logo.png" />
+                </a>
+            </div>
+            <div id="menu-toggle" class="visible-xs toggle-left-sidebar" data-toggle-class="left-sidebar-open" data-target="html">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div class="rightside-header">
+            <div class="header-middle"></div>
+            <div class="header-section" id="search-headerbox">
+                <input type="text" name="search" id="search" placeholder="Search...">
+                <i class="fa fa-search search" id="search-icon" aria-hidden="true"></i>
+                <div class="header-separator"></div>
+            </div>
+            <div class="header-section" id="user-headerbox">
+                <div class="user-header-wrap">
+                    <div class="user-photo">
+                        <img src="images/user-avatar.jpg" alt="Jane Doe" />
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Jane Doe</span>
+                        <span class="user-profile">Admin</span>
+                    </div>
+                    <i class="fa fa-plus icon-open" aria-hidden="true"></i>
+                    <i class="fa fa-minus icon-close" aria-hidden="true"></i>
+                </div>
+                <div class="user-options dropdown-box">
+                    <div class="drop-content basic">
+                        <ul>
+                            <li> <a href="pages_user-profile.html"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                            <li> <a href="pages_lock-screen.html"><i class="fa fa-lock" aria-hidden="true"></i> Lock Screen</a></li>
+                            <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Configurations</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-separator"></div>
+            <div class="header-section">
+                <a href="${pageContext.request.contextPath}/admins/logout.do"><i class="fa fa-sign-out log-out" aria-hidden="true"></i></a><!-- href="pages_sign-in.html" -->
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="left-sidebar">
+            <div class="left-sidebar-header">
+                <div class="left-sidebar-title">导航</div>
+                <div class="left-sidebar-toggle c-hamburger c-hamburger--htla hidden-xs" data-toggle-class="left-sidebar-collapsed" data-target="html">
+                    <span></span>
+                </div>
+            </div>
+            <div id="left-nav" class="nano">
+                <div class="nano-content">
+                    <nav>
+                        <ul class="nav" id="main-nav">
+                            <li class="active-item"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i><span>导航页</span></a></li>
+                            <li class="has-child-item close-item">
+                                <a><i class="fa fa-cubes" aria-hidden="true"></i><span>系统管理</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li url="/admins/sys/user/index.do"><a href="admin/sys/user_index.html">用户管理</a></li>
+                                    <li url="/admins/sys/role/index.do"><a href="admin/sys/role_index.html">角色管理</a></li>
+                                    <li url="/admins/sys/perm/index.do"><a href="#">权限管理</a></li>
+                                    <li url="/admins/sys/log/index.do"><a href="#">操作日志</a></li>
+                                    <li url="/admins/sys/config/index.do"><a href="#">配置管理</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item close-item">
+                                <a><i class="fa fa-pie-chart" aria-hidden="true"></i><span>内容管理</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li><a href="charts_chart-js.html">新闻管理</a></li>
+                                    <li><a href="charts_morris.html">文章管理</a></li>
+                                    <li><a href="charts_morris.html">产品管理</a></li>
+                                    <li><a href="charts_morris.html">菜单管理</a></li>
+                                    <li><a href="charts_morris.html">专题管理</a></li>
+                                    <li><a href="charts_morris.html">模版管理</a></li>
+                                    <li><a href="charts_morris.html">Banner管理</a></li>
+                                    <li><a href="charts_morris.html">预制HTML</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item close-item">
+                                <a><i class="fa fa-columns" aria-hidden="true"></i><span>Forms</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li><a href="forms_layouts.html">Layouts</a></li>
+                                    <li><a href="forms_elements.html">Elements</a></li>
+                                    <li><a href="forms_advanced.html">Advanced</a></li>
+                                    <li><a href="forms_validation.html">Validation</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item close-item">
+                                <a><i class="fa fa-table" aria-hidden="true"></i><span>Tables</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li><a href="tables_basic.html">Basic</a></li>
+                                    <li><a href="tables_data-tables.html">DataTable</a></li>
+                                    <li><a href="tables_responsive.html">Responsive</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item close-item">
+                                <a><i class="fa fa-files-o" aria-hidden="true"></i><span>Pages</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li><a href="pages_sign-in.html">Sign in</a></li>
+                                    <li><a href="pages_lock-screen.html">Lock screen</a></li>
+                                    <li><a href="pages_forgot-password.html">Forgot password</a></li>
+                                    <li class="has-child-item close-item">
+                                        <a>Error pages</a>
+                                        <ul class="nav child-nav level-2 ">
+                                            <li><a href="pages_error-404-content.html">Error 404 content</a></li>
+                                            <li><a href="pages_error-404.html">Error 404 page</a></li>
+                                            <li><a href="pages_error-500.html">Error 500</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="pages_faq.html">FAQ</a></li>
+                                    <li><a href="pages_user-profile.html">User profile</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item close-item">
+                                <a><i class="fa fa-paper-plane" aria-hidden="true"></i><span>Widgets</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li><a href="widgets_boxes.html">Boxes</a></li>
+                                    <li><a href="widgets_lists.html">Lists</a></li>
+                                    <li><a href="widgets_posts.html">Posts</a></li>
+                                    <li><a href="widgets_timelines.html">Timelines</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item close-item">
+                                <a><i class="fa fa-magic" aria-hidden="true"></i><span>Helpers</span></a>
+                                <ul class="nav child-nav level-1">
+                                    <li><a href="helpers_background-border.html">Background & Border</a></li>
+                                    <li><a href="helpers_margin-padding.html">Margin & Padding</a></li>
+                                </ul>
+                            </li>
+                            <li class=" has-child-item close-item">
+                                <a>
+                                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                    <span>Menu levels</span>
+                                </a>
+                                <ul class="nav child-nav level-1">
+                                    <li><a>First Item</a></li>
+                                    <li class="has-child-item close-item">
+                                        <a>Second Item</a>
+                                        <ul class="nav child-nav level-2 ">
+                                            <li><a href="#">Option 1</a></li>
+                                            <li><a href="#">Option 2</a></li>
+                                            <li class="has-child-item close-item">
+                                                <a>Option 3</a>
+                                                <ul class="nav child-nav level-3 ">
+                                                    <li><a href="#">Item 1</a></li>
+                                                    <li><a href="#">Item 2</a></li>
+                                                    <li><a href="#">Item 3</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a>Third Item</a></li>
+                                    <li class="has-child-item close-item">
+                                        <a>Fourth Item</a>
+                                        <ul class="nav child-nav level-2 ">
+                                            <li><a href="#">Option 1</a></li>
+                                            <li><a href="#">Option 2</a></li>
+                                            <li class="has-child-item close-item">
+                                                <a>Option 3</a>
+                                                <ul class="nav child-nav level-3 ">
+                                                    <li><a href="#">Item 1</a></li>
+                                                    <li><a href="#">Item 2</a></li>
+                                                    <li><a href="#">Item 3</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-header">
+                <div class="leftside-content-header">
+                    <ul class="breadcrumbs">
+                        <li><i class="fa fa-home" aria-hidden="true"></i><a href="#">启动页</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="padding:50px;">
+                <div class="row animated fadeInUp" ><!-- style="position: relative;top: 100px;left: 100px;" -->
+                    <div class="col-sm-6 col-md-3">
+                        <div class="panel widget-post">
+                            <div class="panel-header">
+                                <a href="https://www.baidu.com/"><img alt="pizza" src="images/post/pizza.jpg" /></a>
+                            </div>
+                            <div class="panel-content">
+                                <div class="text">
+                                    <h6 class="text-sm color-muted mv-xs">November 2016</h6>
+                                    <a href="#" class="text-md color-dark text-bold">官网后台 </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel widget-post">
+                            <div class="panel-header">
+                                <img alt="road" src="images/post/road.jpg" />
+                            </div>
+                            <div class="panel-content">
+                                <div class="text">
+                                    <h6 class="text-sm color-muted mv-xs">November 2016</h6>
+                                    <a href="#" class="text-md color-dark text-bold">10 Keys to a Great Adventure </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-1"></div> -->
+                    <div class="col-sm-6 col-md-3">
+                        <div class="panel widget-post">
+                            <div class="panel-header">
+                                <img alt="pizza" src="images/post/pizza.jpg" />
+                            </div>
+                            <div class="panel-content">
+                                <div class="text">
+                                    <h6 class="text-sm color-muted mv-xs">November 2016</h6>
+                                    <a href="#" class="text-md color-dark text-bold">Why Pizza is the Best Food </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel widget-post">
+                            <div class="panel-header">
+                                <img alt="radio" src="images/post/vintage.jpg" />
+                            </div>
+                            <div class="panel-content">
+                                <div class="text">
+                                    <h6 class="text-sm color-muted mv-xs">November 2016</h6>
+                                    <a href="#" class="text-md color-dark text-bold">Retro is making a comeback</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-1"></div> -->
+                    <div class="col-sm-6 col-md-3">
+                        <div class="panel widget-post">
+                            <div class="panel-header">
+                                <img alt="pizza" src="images/post/pizza.jpg" />
+                            </div>
+                            <div class="panel-content">
+                                <div class="text">
+                                    <h6 class="text-sm color-muted mv-xs">November 2016</h6>
+                                    <a href="#" class="text-md color-dark text-bold">Why Pizza is the Best Food </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel widget-post">
+                            <div class="panel-header">
+                                <img alt="radio" src="images/post/vintage.jpg" />
+                            </div>
+                            <div class="panel-content">
+                                <div class="text">
+                                    <h6 class="text-sm color-muted mv-xs">November 2016</h6>
+                                    <a href="#" class="text-md color-dark text-bold">Retro is making a comeback</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="panel widget-post">
+                            <div class="panel-header">
+                                <img alt="pizza" src="images/post/pizza.jpg" />
+                            </div>
+                            <div class="panel-content">
+                                <div class="text">
+                                    <h6 class="text-sm color-muted mv-xs">November 2016</h6>
+                                    <a href="#" class="text-md color-dark text-bold">Why Pizza is the Best Food </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel widget-post">
+                            <div class="panel-header">
+                                <img alt="radio" src="images/post/vintage.jpg" />
+                            </div>
+                            <div class="panel-content">
+                                <div class="text">
+                                    <h6 class="text-sm color-muted mv-xs">November 2016</h6>
+                                    <a href="#" class="text-md color-dark text-bold">Retro is making a comeback</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="right-sidebar-toggle" data-toggle-class="right-sidebar-opened" data-target="html">
+                <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
+            </div>
+            <div id="right-nav" class="nano">
+                <div class="nano-content">
+                    <div class="template-settings">
+                        <h4 class="text-center">Template Settings</h4>
+                        <ul class="toggle-settings pv-xlg">
+                            <li>
+                                <h6 class="text">Header fixed</h6>
+                                <label class="switch">
+                                    <input id="header-fixed" type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <h6 class="text">Left sidebar fixed</h6>
+                                <label class="switch">
+                                    <input id="left-sidebar-fixed" type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <h6 class="text">Left sidebar collapsed</h6>
+                                <label class="switch">
+                                    <input id="left-sidebar-collapsed" type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <h6 class="text">Content header fixed</h6>
+                                <label class="switch">
+                                    <input id="content-header-fixed" type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                        </ul>
+                        <h4 class="text-center">Template Colors</h4>
+                        <ul class="toggle-colors">
+                            <li>
+                                <a href="index.html" class="on-click"> <img alt="Helsinki-green" src="images/helsinki-green.png" /></a>
+                            </li>
+                            <li>
+                                <a href="../helsinki-light/index.html" class="on-click"> <img alt="Helsinki-light" src="images/helsinki-light.png" /></a>
+                            </li>
+                            <li>
+                                <a href="../helsinki-blue/index.html" class="on-click"> <img alt="Helsinki-blue" src="images/helsinki-blue.png" /></a>
+                            </li>
+                            <li>
+                                <a href="../helsinki-red/index.html" class="on-click"> <img alt="Helsinki-red" src="images/helsinki-red.png" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="scroll-to-top"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+</div>
+<script src="javascripts/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/nano-scroller/nano-scroller.js"></script>
+<!-- 美化滚动条 -->
+<script src="javascripts/template-script.min.js"></script>
+<script src="javascripts/template-init.min.js"></script>
+<script src="vendor/toastr/toastr.min.js"></script>
+<!-- toastr是一个基于jQuery简单、漂亮的消息提示插件 -->
+<script src="vendor/chart-js/chart.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!-- Magnific Popup 是一个响应式弹出层和对话框组件，专注于性能 -->
+<script src="javascripts/examples/dashboard.js"></script>
+<!-- 仪表盘 -->
+</body>
+
+</html>
